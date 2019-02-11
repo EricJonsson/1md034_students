@@ -1,0 +1,107 @@
+@import 'https://fonts.googleapis.com/css?family=Pacifico|Dosis';
+
+/* Header */
+header {
+    display: block;
+    position: relative;
+    margin-left: 25%;
+    margin-right: auto;
+    margin-top: 10px;
+    overflow: hidden;
+    height: 250px;
+}
+h1 {
+    font-size: 30pt;
+    position: absolute;
+    margin-left: 17%;
+    margin-top: 2%;
+}
+
+#headerimg{
+    opacity: .33;
+}
+
+/* Class name: selection */
+.selection {
+    color: rgb(255,255,255);
+    background-color: rgb(0,0,0);
+    border: 2px dashed #ff9900;
+}
+
+main {
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top; 5px;    
+}
+/*  ID: Contact*/
+#Contact {
+    margin-top: 5px;
+    width: 20%;
+    position: relative;
+    margin-left: 5%;
+    margin-right: 10%;
+    font-family: "Droid Serif", sans-serif;
+    font-size: 12pt;
+    border: 1px dashed #000000;
+}
+#footersep {
+    opacity: .2;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border-top: 1px solid #000000;
+}
+footer {    
+    margin-top: 5px;
+    margin-left: 5%;
+}
+.allergen {
+    font-weight: bold;
+}
+
+input[type="radio"] {
+    height: 1em;
+    width: 1em;
+}
+
+::selection {
+      color: rgb(0,50,100);
+}
+
+button:hover{
+    background-color: rgb(150,150,150);
+    cursor: crosshair;
+}
+#burgertable {
+    border: 2px solid #111111;    
+    transform: translate(50%,0);
+    text-align: left;
+}
+
+.burgers {
+    position: relative;
+    margin-left: 25%;
+    margin-right: 10%;
+    display: grid;
+    grid-template-columns: 250px 250px 250px;
+    border-radius:5px;
+    padding: 5px;
+    font-size: 150;
+}
+item {
+    
+}
+.classic {
+    grid-column: 1;    
+}
+.flaming {
+    grid-column: 2;    
+}
+.veggie {
+    grid-column: 3;    
+}
+
+#confirmbutton {
+    position: relative;
+    margin-left: 5%;
+    margin-top: 10px;
+}

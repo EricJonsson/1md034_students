@@ -1,10 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>DELI-VERY</title>
-    </head>
-    <body>
-        <h1>Hello World!!!</h1>
-        <a href="/map" target="_blank">Open map in new window</a>.
-    </body>
+  <head>
+    <link rel="stylesheet" type="text/css" href="/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <script src="js/js_script.js"></script>
+    <script src="https://vuejs.org/js/vue.js"></script>
+    <script src="js/vue_script.js"></script>
+    
+    <title>Page title shown in window title</title>
+    <meta charset="utf-8"/>
+  </head>
+  <body>
+    <main>
+
+      
+      <header>
+	<h1>Välkommen till BurgerOnline</h1>
+	<img id="headerimg" src="/img/nybar.jpg">
+      </header>
+
+      <section class="selection">
+	<h2>Select burger</h2>
+
+	<h5>This is where you select your desired burger</h5>
+
+	<div class="burgers">
+	  <div class="item classic">Classic Cheese
+	    <img src="https://cdn-image.myrecipes.com/sites/default/files/styles/medium_2x/public/spicy-cheddar-stuffed-burgers-sl.jpg?itok=Qxlr_2uB"
+		 alt="Classic burger img"
+		 title="Classic burger"
+		 height="150"
+		 width="250">
+	    <ul>
+	      <li>High fat content</li>
+	      <li>Rated top 10 burgers in the US 2018</li>
+	      <li>Contains <span class="allergen">Lactose</span></li>
+	    </ul>
+	  </div>
+	  <div class="item flaming">Flaming Burger
+	    <img src="https://img.taste.com.au/yvyBXKtB/w643-h428-cfill-q90/taste/2016/11/spicy-lamb-burger-96199-1.jpeg"
+		 alt="Span"
+		 title="In line element"
+		 height="150"
+		 width="250">
+	    <ul>
+	      <li>Spicy as hell</li>
+	      <li>Warning: extreme burn going in and going out</li>
+	      <li>Contains <span class="allergen">Gluten</span></li>
+	    </ul>	
+	  </div>
+	  <div class="item veggie">Veggie BBQ
+	    <img src="https://redgoldtomatoes.com/images/red-gold-recipe-images/rg_spicytomburger.tmb-rg-b.jpg?sfvrsn=691d800d_1"
+		 alt="BBQ Veggie burger"
+		 title="Vegetarian option"
+		 height="150"
+		 width="250">
+	    <ul>
+	      <li>Vegetarian option</li>
+	      <li>No blood sacrifice and no sacrifice in taste</li>
+	      <li>Contains <span class="allergen">Gluten</span></li>
+	  </div>
+	</div>
+
+	
+	
+      </section>
+      <!-- Contact information section -->
+      <section id="Contact">
+	<h2>Customer Information</h2>
+	<h5>This is where you provide necessary information</h5>
+	<form>
+	  <p>
+	    <label id="xxyz" for="Fullname">Full Name</label><br>
+	    <input type="text" id="Fullname" name="fn" placeholder="Full name" required="required"></input>
+	  </p>
+	  <p>
+	    <label for="email">E-Mail address</label><br>
+	    <input type="email" id="email" name="em" required="required" placeholder="E-mail address"></input>
+	  </p>
+	  <p>
+	    <label for="Street">Street</label><br>
+	    <input type="text" id="Street" name="st" placeholder="Street name" required="required"></input>
+	  </p>
+	  <p>
+	    <label for="House">House</label><br>
+	    <input type="number" id="House" name="hs" placeholder="House number" required="required"></input>
+	  </p>
+
+	  <!-- Payment -->
+	  <p>
+	    <label for="payment">Payment option</label><br>
+	    <select id="payment" name="pm">
+	      <option>Creditcard</option>
+	      <option>Paypal</option>	      
+	      <option>Pay on delivery</option>
+	    </select>	    
+	  </p>
+	  <p>
+	    <label for="gender">Gender</label><br>
+	    <input type="radio" name="gender" checked="checked">Male</input><br>
+	    <input type="radio" name="gender">Female</input><br>
+	    <input type="radio" name="gender">Do not wish to enter</input><br>
+	  </p>	  
+
+	</form>
+      </section>
+      	  <button type="submit" id="confirmbutton"><img src="http://worldartsme.com/images/send-button-clipart-1.jpg" width="50" height="25">Place order</button>
+
+    </main>
+
+    <p id="footersep"></p>
+    <!-- FOOTER -->
+    <footer>Copyright: N/A
+      <a href="https://www.google.se">Go to google</a>
+    </footer>
+    
+  </body>
 </html>
