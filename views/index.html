@@ -3,16 +3,20 @@
   <head>
     <link rel="stylesheet" type="text/css" href="/css/reset.css">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
-    <script src="js/js_script.js"></script>
+
+    <script src="js/menu.js"></script>
+    <script src="js/js_script.js" defer></script>
+    <!--
     <script src="https://vuejs.org/js/vue.js"></script>
     <script src="js/vue_script.js"></script>
+    -->
     
     <title>Page title shown in window title</title>
     <meta charset="utf-8"/>
   </head>
   <body>
     <main>
-
+      
       
       <header>
 	<h1>Välkommen till BurgerOnline</h1>
@@ -23,46 +27,8 @@
 	<h2>Select burger</h2>
 
 	<h5>This is where you select your desired burger</h5>
-
-	<div class="burgers">
-	  <div class="item classic">Classic Cheese
-	    <img src="https://cdn-image.myrecipes.com/sites/default/files/styles/medium_2x/public/spicy-cheddar-stuffed-burgers-sl.jpg?itok=Qxlr_2uB"
-		 alt="Classic burger img"
-		 title="Classic burger"
-		 height="150"
-		 width="250">
-	    <ul>
-	      <li>High fat content</li>
-	      <li>Rated top 10 burgers in the US 2018</li>
-	      <li>Contains <span class="allergen">Lactose</span></li>
-	    </ul>
-	  </div>
-	  <div class="item flaming">Flaming Burger
-	    <img src="https://img.taste.com.au/yvyBXKtB/w643-h428-cfill-q90/taste/2016/11/spicy-lamb-burger-96199-1.jpeg"
-		 alt="Span"
-		 title="In line element"
-		 height="150"
-		 width="250">
-	    <ul>
-	      <li>Spicy as hell</li>
-	      <li>Warning: extreme burn going in and going out</li>
-	      <li>Contains <span class="allergen">Gluten</span></li>
-	    </ul>	
-	  </div>
-	  <div class="item veggie">Veggie BBQ
-	    <img src="https://redgoldtomatoes.com/images/red-gold-recipe-images/rg_spicytomburger.tmb-rg-b.jpg?sfvrsn=691d800d_1"
-		 alt="BBQ Veggie burger"
-		 title="Vegetarian option"
-		 height="150"
-		 width="250">
-	    <ul>
-	      <li>Vegetarian option</li>
-	      <li>No blood sacrifice and no sacrifice in taste</li>
-	      <li>Contains <span class="allergen">Gluten</span></li>
-	  </div>
-	</div>
-
-	
+	<div class="burgers" id="burgerMenu">
+	</div>	
 	
       </section>
       <!-- Contact information section -->
@@ -114,6 +80,5 @@
     <footer>Copyright: N/A
       <a href="https://www.google.se">Go to google</a>
     </footer>
-    
   </body>
 </html>

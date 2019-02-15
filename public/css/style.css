@@ -23,9 +23,11 @@ h1 {
 
 /* Class name: selection */
 .selection {
+    overflow: auto;
     color: rgb(255,255,255);
     background-color: rgb(0,0,0);
-    border: 2px dashed #ff9900;
+    border: 2px dashed #ff9900;    
+    max-height: 275px;
 }
 
 main {

@@ -1,52 +1,83 @@
+for (items in food){	
+    var docBurgerMen = document.getElementById("burgerMenu"); // Get root div for all items
 
-function Employee(fn, ln, branch, pos) {
-    this.firstname = fn;
-    this.lastname = ln;
-    this.branch = branch;
-    this.position = pos;
+    var name = food[items].name;
+    var imgURL = food[items].img;
+    var kCal = food[items].kCal;
+    var lac = food[items].lactose;
+    var glu = food[items].gluten;
+    var class_id = food[items].classID; 
+    var createItem = document.createElement("DIV"); // Create new div for item
+    createItem.id = name; //Set new item div ID
+    createItem.setAttribute("class",class_id); // Set new item div Class
+    docBurgerMen.appendChild(createItem); // Append newly created Item to root
+    document.getElementById(name).innerHTML = name; //Append Caption
 
-    this.name = function() {
-	return this.firstname + ' ' + lastname;
-    };
-
-}
-
-function MenuItem (item, kCal, gluten, lactose){
-    this.item = item;
-    this.kCal = kCal;
-    this.gluten = gluten;
-    this.lactose = lactose;
-
-    this.name = function() {
-	return this.item + ' ' + this.kCal;
+    // Insert IMAGE
+    var img = document.createElement("IMG"); 
+    img.src = imgURL;
+    img.height = 150;
+    img.width = 200;
+    document.getElementById(name).appendChild(img); // Append IMAGE
+    // Create Details list describing Item
+    var unorderedList = document.createElement("UL");
+    unorderedList.id = "ul"+name;
+    document.getElementById(name).appendChild(unorderedList); // Append description list
+    // Fill list with kCal
+    var listitem_kCal = document.createElement("LI");
+    var kCalNode = document.createTextNode(kCal+"kCal");
+    listitem_kCal.appendChild(kCalNode);
+    document.getElementById("ul"+name).appendChild(listitem_kCal); // Append list item
+    // Fill list with allergens information
+    if ( lac || glu ){
+	var allergen_li = document.createElement("LI")
+	var allergens_text = "Contains:";
+	if(lac){
+	    allergens_text = allergens_text + " Lactose";
+	}
+	if(glu){
+	    allergens_text = allergens_text + " Gluten";
+	}
+	var allergens_txt_node = document.createTextNode(allergens_text);
+	document.getElementById("ul"+name).appendChild(allergens_txt_node);	
     }
+    // Fill with buy checkbox
+    var checkb = document.createElement("input");
+    var checkb_label = document.createElement("LABEL");
+    checkb_label.id = name+"checkb_label";
+    
+    checkb.id = name + "check";
+    checkb.setAttribute("type","checkbox");
+    document.getElementById(name).appendChild(checkb);
+    document.getElementById(name).appendChild(checkb_label);
+    document.getElementById(name+"checkb_label").innerHTML = "Buy";
     
 }
 
-var burger = new MenuItem("Fat Burger", "1455kCal",true,false);
+// Eventlistener: Confirm contacts button
+var confButton = document.getElementById("confirmbutton");
+confButton.addEventListener("click", confirmOrder);
 
-var emp = new Employee('Maike', 'Paetzel', 'Uppsala', 'PhD Student');
-
-//function setMyID() {
-//    document.getElementById("myID").innerHTML = "Välj en burgare";
-//}
-
-function crtB(){
-var btn = document.createElement('button');
-
-// Use the createTextNode() method to create text content
-var txt = document.createTextNode('Click Here');
-
-// Use the appendChild() method of a node object to add one node inside another
-btn.appendChild(txt);
-
-// We can set an attribute to the element node using the setAttribute() method
-btn.setAttribute('class', 'aButtonClass');
-
-// We can also read attributes using the getAttribute() mehtod
-console.log( btn.getAttribute('class') ); // Output: aButtonClass
-
-// In order to display this newly created element, we have to append it to an existing 
-// node in the document. In this case we add it directly to the body.
-document.body.appendChild(btn);
+function confirmOrder(){
+    // Load contact information
+    var fname = document.getElementById("Fullname").value;
+    var email = document.getElementById("email").value;
+    var street = document.getElementById("Street").value;
+    var house = document.getElementById("House").value;
+    
+    // Create list of purchased items
+    var purchase = "Order placed: ";
+    for(items in food){
+	var name = food[items].name;
+	var checkb = document.getElementById(name+"check").checked;
+	if ( checkb ){
+	    purchase = purchase + name + " , ";
+	}
+    }
+    // Display reciept
+    alert(purchase+"\n\n"+
+	  "Customer: "+fname+"\n"+
+	  "Contact: "+email+"\n"+
+	  "Address: "+street+" "+house+
+	  "\n\nEnjoy");
 }
