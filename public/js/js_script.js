@@ -64,8 +64,8 @@ function confirmOrder(){
     var fname = document.getElementById("Fullname").value;
     var email = document.getElementById("email").value;
 
-    var street = document.getElementById("Street").value;
-    var house = document.getElementById("House").value;
+//    var street = document.getElementById("Street").value;
+//    var house = document.getElementById("House").value;
     
     // Create list of purchased items
     var purchase = "Order placed: ";

@@ -27,19 +27,6 @@
     <main>
 
 
-      <h1> Click in the map! </h1>
-      <a href="/dispatcher" target="_blank">Open dispatcher in new window</a>.
-      <div class="view-box">
-	<div id="dots" v-on:click="displayOrder">
-          <div 
-            v-for="(order) in localOrder"
-	    v-bind:style="{ left: localOrder.details.x + 'px', top: localOrder.details.y + 'px'}">
-            {{"T"}}
-          </div>
-	</div>
-      </div>
-      
-
       
       
       <header>
@@ -55,10 +42,29 @@
 	</div>	
 	
       </section>
+
+
+      <!-- MAP ---------------------------------------->      
+
+      <h1> Click in the map! </h1>
+      <a href="/dispatcher" target="_blank">Open dispatcher in new window</a>.
+      <div class="view-box">
+	<div id="dots" v-on:click="displayOrder">
+          <div 
+            v-for="(order) in localOrder"
+	    v-bind:style="{ left: localOrder.details.x + 'px', top: localOrder.details.y + 'px'}">
+            {{"T"}}
+          </div>
+	</div>
+      </div>
+<!-- MAP END ------------------------------------>      
+
+      
       <!-- Contact information section -->
       <section id="Contact">
 	<h2>Customer Information</h2>
 	<h5>This is where you provide necessary information</h5>
+
 	<form>
 	  <p>
 	    <label id="xxyz" for="Fullname">Full Name</label><br>
@@ -68,7 +74,8 @@
 	    <label for="email">E-Mail address</label><br>
 	    <input type="email" id="email" name="em" required="required" placeholder="E-mail address"></input>
 	  </p>
-	  <p>
+	  
+<!--	  <p>
 	    <label for="Street">Street</label><br>
 	    <input type="text" id="Street" name="st" placeholder="Street name" required="required"></input>
 	  </p>
@@ -76,7 +83,7 @@
 	    <label for="House">House</label><br>
 	    <input type="number" id="House" name="hs" placeholder="House number" required="required"></input>
 	  </p>
-
+-->
 	  <!-- Payment -->
 	  <p>
 	    <label for="payment">Payment option</label><br>
