@@ -33,6 +33,27 @@ var vm = new Vue({
                                            y: event.clientY - 10 - offset.y },
                                 orderItems: ["Beans", "Curry"]
                               });
-    }
+    },
+      displayOrder: function (event) {
+	  var offset = {x: event.currentTarget.getBoundingClientRect().left,
+			y: event.currentTarget.getBoundingClientRect().top};
+	  
+	  local_order = { orderId: this.getNext(),
+                              details: { x: event.clientX - 10 - offset.x,
+                                         y: event.clientY - 10 - offset.y },
+                              orderItems: []
+			};
+
+	  
+	  /*
+	  socket.emit("addOrder", { orderId: this.getNext(),
+                                    details: { x: event.clientX - 10 - offset.x,
+                                               y: event.clientY - 10 - offset.y },
+                                    orderItems: ["Black Beans", "Curry"]
+				  });
+	*/  	  
+      }
+      
   }
+    
 });

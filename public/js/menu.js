@@ -1,3 +1,9 @@
+var local_order = {
+    "orderId" : 1,
+    "details" : "Na",
+    "orderItems" : ["items"]
+}
+
 var food = [
     {
 	"name": "Classic Cheese",

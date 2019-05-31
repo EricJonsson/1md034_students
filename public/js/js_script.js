@@ -62,6 +62,7 @@ function confirmOrder(){
     // Load contact information
     var fname = document.getElementById("Fullname").value;
     var email = document.getElementById("email").value;
+
     var street = document.getElementById("Street").value;
     var house = document.getElementById("House").value;
     
@@ -72,12 +73,19 @@ function confirmOrder(){
 	var checkb = document.getElementById(name+"check").checked;
 	if ( checkb ){
 	    purchase = purchase + name + " , ";
+
+	    local_order["orderItems"].push(name);
+	    
+//	    var items_size = local_order.length;
+//	    local_order[items_size+1] = name;
+//	    console.log("Should add " + name + " to item number: " + items_size);
 	}
     }
     // Display reciept
     alert(purchase+"\n\n"+
 	  "Customer: "+fname+"\n"+
 	  "Contact: "+email+"\n"+
-	  "Address: "+street+" "+house+
+	  //"Address: "+street+" "+house+
 	  "\n\nEnjoy");
+    socket.emit("addOrder", local_order);
 }
