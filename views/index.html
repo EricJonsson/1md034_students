@@ -32,8 +32,8 @@
       <div class="view-box">
 	<div id="dots" v-on:click="displayOrder">
           <div 
-            v-for="(order, key) in orders"
-	    v-bind:style="{ left: order.details.x + 'px', top: order.details.y + 'px'}">
+            v-for="(order) in localOrder"
+	    v-bind:style="{ left: localOrder.details.x + 'px', top: localOrder.details.y + 'px'}">
             {{"T"}}
           </div>
 	</div>
