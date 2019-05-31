@@ -1,5 +1,7 @@
 var local_order = {
     "orderId" : 1,
+    "name" : "Na",
+    "email" : "Na",
     "details" : "Na",
     "orderItems" : ["items"]
 }

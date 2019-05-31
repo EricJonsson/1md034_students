@@ -58,6 +58,7 @@ for (items in food){
 var confButton = document.getElementById("confirmbutton");
 confButton.addEventListener("click", confirmOrder);
 
+
 function confirmOrder(){
     // Load contact information
     var fname = document.getElementById("Fullname").value;
@@ -87,5 +88,11 @@ function confirmOrder(){
 	  "Contact: "+email+"\n"+
 	  //"Address: "+street+" "+house+
 	  "\n\nEnjoy");
+
+    local_order["name"] = fname;
+    local_order["email"] = email;
+
     socket.emit("addOrder", local_order);
 }
+
+
