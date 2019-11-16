@@ -53,13 +53,6 @@ var vm = new Vue({
 	  };
 	      
 	  console.log(this.localOrder);
-	  /*
-	  socket.emit("addOrder", { orderId: this.getNext(),
-                                    details: { x: event.clientX - 10 - offset.x,
-                                               y: event.clientY - 10 - offset.y },
-                                    orderItems: ["Black Beans", "Curry"]
-				  });
-	*/  	  
       }
       
   }

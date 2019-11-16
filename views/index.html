@@ -4,31 +4,26 @@
     <link rel="stylesheet" type="text/css" href="/css/reset.css">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
 
+    <script src="https://vuejs.org/js/vue.js"></script>
     <script src="js/menu.js"></script>
     <script src="js/js_script.js" defer></script>
-    <!--
-    <script src="https://vuejs.org/js/vue.js"></script>
-    <script src="js/vue_script.js"></script>
-    -->
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>DELI-VERY MAP</title>
     <link rel="stylesheet" href="css/deli-very.css">
     <script src="/vue/vue.js" defer></script>
+    <script src="/js/vue_script.js" defer></script>
     <script src="/socket.io/socket.io.js" defer></script>
     <script src="js/deli-very.js" defer></script>
-    
     
     <title>Page title shown in window title</title>
     <meta charset="utf-8"/>
   </head>
+
+<!-- BODY MAIN -->
   <body>
     <main>
-
-
-      
-      
       <header>
 	<h1>Välkommen till BurgerOnline</h1>
 	<img id="headerimg" src="/img/nybar.jpg">
@@ -36,16 +31,12 @@
 
       <section class="selection">
 	<h2>Select burger</h2>
-
 	<h5>This is where you select your desired burger</h5>
 	<div class="burgers" id="burgerMenu">
-	</div>	
-	
+	</div>		
       </section>
 
-
-      <!-- MAP ---------------------------------------->      
-
+<!-- MAP -->
       <h1> Click in the map! </h1>
       <a href="/dispatcher" target="_blank">Open dispatcher in new window</a>.
       <div class="view-box">
@@ -57,14 +48,11 @@
           </div>
 	</div>
       </div>
-<!-- MAP END ------------------------------------>      
 
-      
-      <!-- Contact information section -->
+<!-- SECTION CONTACT INFORMATION -->
       <section id="Contact">
 	<h2>Customer Information</h2>
 	<h5>This is where you provide necessary information</h5>
-
 	<form>
 	  <p>
 	    <label id="xxyz" for="Fullname">Full Name</label><br>
@@ -74,17 +62,8 @@
 	    <label for="email">E-Mail address</label><br>
 	    <input type="email" id="email" name="em" required="required" placeholder="E-mail address"></input>
 	  </p>
-	  
-<!--	  <p>
-	    <label for="Street">Street</label><br>
-	    <input type="text" id="Street" name="st" placeholder="Street name" required="required"></input>
-	  </p>
-	  <p>
-	    <label for="House">House</label><br>
-	    <input type="number" id="House" name="hs" placeholder="House number" required="required"></input>
-	  </p>
--->
-	  <!-- Payment -->
+
+<!-- PAYMENT -->
 	  <p>
 	    <label for="payment">Payment option</label><br>
 	    <select id="payment" name="pm">
@@ -102,12 +81,17 @@
 
 	</form>
       </section>
-      	  <button type="submit" id="confirmbutton"><img src="http://worldartsme.com/images/send-button-clipart-1.jpg" width="50" height="25">Place order</button>
+<!-- SUBMIT ORDER -->
+      <div id="subWrapper">
+	<button v-on:click="confOrd"> Confirm Order</button>
+	{{ message }}
+      </div>
 
     </main>
 
     <p id="footersep"></p>
-    <!-- FOOTER -->
+
+<!-- FOOTER -->
     <footer>Copyright: N/A
       <a href="https://www.google.se">Go to google</a>
     </footer>
