@@ -28,22 +28,12 @@
 	<h1>Välkommen till BurgerOnline</h1>
 	<img id="headerimg" src="/img/nybar.jpg">
       </header>
-      
+
       <section class="selection">
 	<h2>Select burger</h2>
 	<h5>This is where you select your desired burger</h5>
-
-	<div id="burgerMenu" class="burgers">
-	  <div v-for="item in foodItems" v-bind:id="item.name" v-bind:class="item.classID">
-	    {{ item.name }}
-	    <img v-bind:src="item.img" width="200" height="150"></img>
-	    <ul v-bind:id="'ul'+item.name"></ul>
-	    <input :id="item.name + 'check'" type="checkbox"> </input>
-	    <label :id="item.name + 'checb_label'">Buy</label>
-	  </div>
-
-	</div>
-	
+	<div class="burgers" id="burgerMenu">
+	</div>		
       </section>
 
 <!-- MAP -->
@@ -95,12 +85,6 @@
       <div id="subWrapper">
 	<button v-on:click="confOrd"> Confirm Order</button>
 	{{ message }}
-	<ul>
-	  <li> {{ name }} </li>
-	  <li> {{ email }} </li>
-	  {{ orderData }}
-	</ul>
-	  
       </div>
 
     </main>

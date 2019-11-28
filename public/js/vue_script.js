@@ -1,7 +1,10 @@
-var vm = new Vue({
+var submitVM = new Vue({
     el: '#subWrapper',
     data: {
-        message: 'Submit order!'
+        message : 'Submit order!',
+	name: null,
+	email: null,
+	orderData: null
     },
     methods: {
 	confOrd: function() {
@@ -18,16 +21,24 @@ var vm = new Vue({
 		    local_order["orderItems"].push(name);
 		}
 	    }
-	    // Display reciept
-	    alert(purchase+"\n\n"+
-		  "Customer: "+fname+"\n"+
-		  "Contact: "+email+"\n"+
-		  "\n\nEnjoy");
-
+	    this.message = "New order placed!";
+	    this.name = fname;
+	    this.email = email;
+	    this.orderData = purchase;
 	    local_order["name"] = fname;
 	    local_order["email"] = email;
 
 	    socket.emit("addOrder", local_order);
 	}
+    }
+
+})
+
+var submitVM = new Vue({
+    el: '#burgerMenu',
+    data: {
+	foodItems: food
+    },
+    methods: {
     }
 })
